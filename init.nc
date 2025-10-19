@@ -10,10 +10,10 @@ class printer{
     }
     func print(printer,filetoprint){
         if @OS == "Unix"{
-            ret = runwait(cat("lpr -P ",printer," ",filetoprint))
+            run(cat("lpr -P ",printer," ",filetoprint))
         }
         else{
-            ret = runwait("Get-Printer | Out-File -FilePath ",filetoprint)
+            run("Get-Printer | Out-File -FilePath ",filetoprint)
         }        
     }
 }
